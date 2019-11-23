@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 
 body {
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 h3 {
@@ -135,7 +135,7 @@ h2 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  background-color: grey;
+  background-color: rgb(255, 255, 255);
 }
 
 .for-back-button{

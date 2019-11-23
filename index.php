@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class = "flex-main-buttons">
-            <a class="QAbutton" href="QA.php?q=1">DEJANOS AYUDARTE</a>
+            <a class="QAbutton" href="QA.php?q=0">DEJANOS AYUDARTE</a>
             <a class="QAbutton" href="https://www.freshlycosmetics.com/es/packs/">PARA REGALAR</a>
         </div>
         <div class="flex-help-buttons">
