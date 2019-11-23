@@ -1,0 +1,192 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14-nov-2019, 17:32:54
+    Author     : sergi
+*/
+
+body {
+  background-color: whitesmoke;
+}
+
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+}
+
+h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-clip: content-box;
+}
+
+.flex-main-buttons{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: black;
+  margin-left: 0ch;
+  margin-right: 0ch;
+  border: 0ch;
+  border-block-color: black;
+  justify-content: center;
+  height: 125px;
+  justify-content: space-around;
+}
+
+.flex-answer-buttons{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: none;
+  margin-left: 0ch;
+  margin-right: 0ch;
+  border: 0ch;
+  border-block-color: black;
+  justify-content: center;
+  height: 125px;
+  justify-content: space-around;
+}
+
+.QAbutton {
+  background-color: greenyellow;
+  font-size: 30px;
+  font-family: Verdana;
+  color: black;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 2px solid green;
+  padding: .5rem 1rem;
+  border-radius: 0;
+}
+
+.box{
+  margin: 12px;
+  background-color: rgb(130, 230, 155);
+  box-shadow: 4px;
+  opacity: .8;
+}
+
+.question{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 32px;
+}
+
+.answers-button {
+  background-color: none;
+  font-size: 30px;
+  font-family: Verdana;
+  color: black;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 4px solid green;
+  padding: .5rem 1rem;
+  border-radius: 0;
+  margin: 6px;
+  flex: 1 0 44%; /* explanation below */
+  margin: 5px;
+  height: 50px;
+}
+
+.HelpButton{
+  background-color: rgb(114, 197, 223);
+  font-size: 20px;
+  font-family: Verdana;
+  color: black;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 2px solid rgb(29, 130, 177);
+  padding: .5rem 1rem;
+  border-radius: 0;
+}
+
+.flex-help-buttons{
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: grey;
+}
+
+.for-back-button{
+  margin-left: 6px;
+}
+
+.product-list{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: black;
+  margin-left: 0ch;
+  margin-right: 0ch;
+  border: 0ch;
+  border-block-color: black;
+  justify-content: center;
+  height: 125px;
+}
+
+.product-view{
+  margin: 2px;
+  background-color: rgb(182, 247, 129);
+}
+
+.description-label{
+  float: right;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.store-buttons{
+  padding: 4px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: right;
+  background-color: none;
+}
+
+.view-button{
+  padding: 16px;
+  margin: 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: 2px solid green;
+  background-color: greenyellow;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
