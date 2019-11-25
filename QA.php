@@ -9,8 +9,8 @@
     </head>
  
     <body>
-            <a href=index.php><img src = resources/FreshFinder_logo.png
-                alt="Inicio"> </a>";
+            <a href=index.php><img src = "resources/FreshFinder_logo.png"
+                alt="Inicio"> </a>
         <div class="box">
             <div class="question">
                 <?php
@@ -76,10 +76,12 @@
                 $q = $_GET['q'];
 
                 if ($q > 100) {
-                    $q = $q - 100 * ( $q % 100);
+                    $q = $q - ( $q % 10);
+                    $q = $q / 10;
                     $q = "?q=".$q;
                 } elseif ($q > 10) {
-                    $q = $q - 10 * ( $q % 10);
+                    $q = $q - ( $q % 10);
+                    $q = $q / 10;
                     $q = "?q=".$q;
                 } else if ($q <= 4 && $q >= 1) {
                     $q = 0;
