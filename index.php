@@ -9,10 +9,21 @@
     </head>
  
     <body>
-        <input type="image" src="resources/FreshFinder_logo.png" />
-        <div>
-            <h2>DESTACADOS</h2>
+        <input type="image" src="resources/FreshFinder_logo_white.png" />
+        <div class="flex-help-buttons">
+            <a class="HelpButton" href="https://www.freshlycosmetics.com/es/contacta">Ayuda</a>
+            <a class="HelpButton" href="https://www.freshlycosmetics.com/es/productos/">Ver todo el catálogo</a>
+        </div>    
+        <div class ="hola">
+                <h2>Bienvenidos</h2>
+            </div>
+            <div>
+            <h3>DESTACADOS</h3>
             <div class="flex-container">
+                <div>
+                    <img src="resources/Pelota.jpeg"/>
+                    <h3>Lorem Ipsum Echo</h3>
+                </div>
                 <div>
                     <img src="resources/Pelota.jpeg"/>
                     <h3>Lorem Ipsum Echo</h3>
@@ -24,13 +35,10 @@
             </div>
         </div>
         <div class = "flex-main-buttons">
-            <a class="QAbutton" href="QA.php?q=0">DEJANOS AYUDARTE</a>
-            <a class="QAbutton" href="https://www.freshlycosmetics.com/es/packs/">PARA REGALAR</a>
+            <a class="QAbutton" href="QA.php?q=0">EMPEZAR<br>RECOMENDACIÓN</a>
+            <a class="QAbutton" href="https://www.freshlycosmetics.com/es/packs/"><br>PARA REGALAR</a>
         </div>
-        <div class="flex-help-buttons">
-            <a class="HelpButton" href="https://www.freshlycosmetics.com/es/contacta">Ayuda</a>
-            <a class="HelpButton" href="https://www.freshlycosmetics.com/es/productos/">Ver todo el catálogo</a>
-        </div>
+        
         
     </body>
 </html>

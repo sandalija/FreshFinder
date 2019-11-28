@@ -9,19 +9,79 @@
     </head>
  
     <body>
-            <a href=index.php><img src = "resources/FreshFinder_logo.png"
+            <a href=index.php><img src = "resources/FreshFinder_logo_white.png"
                 alt="Inicio"> </a>
-        <div class="box">
-            <div class="question">
+            <div class="flex-help-buttons">
+                <a class="HelpButton" href="https://www.freshlycosmetics.com/es/contacta">Ayuda</a>
+                <a class="HelpButton" href="https://www.freshlycosmetics.com/es/productos/">Ver todo el catálogo</a>
+            </div> 
+        
                 <?php
                  include 'resources/scripts.php'; 
 
                 $q = $_GET['q'];
 
+                $migas = array(0 => "", 1 => "", 2 => "");
+                $address = array(0 => "0", 1 => "", 2 => "");
+
+                //$lista = array ($agua_micelar_green, $blue_radiance_enzymatic_serum);
+
+                // div para las migas
+                echo "<div class=\"migas\">";
+                switch($q) {
+                    case 1: $migas[0] = "Tratamiento de piel"; break;
+                    case 2: $migas[0] = "Tratamiento facial"; break;
+                    case 3: $migas[0] = "Tratamiento cabello"; break;
+                    case 4: $migas[0] = "Para niños"; break;
+                    case 11: $migas[0] = "Tratamiento de piel";
+                            $migas[1] = "Grasa"; 
+                            $address[1] = "1";
+                            break;
+                    case 12: $migas[0] = "Tratamiento de piel";
+                            $migas[1] = "Seca"; 
+                            $address[1] = "1";
+                          break;
+                    case 13: $migas[0] = "Tratamiento de piel";
+                            $migas[1] = "Mixta"; 
+                            $address[1] = "1";
+                            break;
+                    case 14: $migas[0] = "Tratamiento de piel";
+                            $migas[1] = "Sensible"; 
+                            $address[1] = "1";
+                             break;
+                    case 111: $migas[0] = "Tratamiento de piel";
+                            $migas[1] = "Grasa"; 
+                            $address[1] = "1";
+                            $migas[2] = "Rejuvenecer"; 
+                            $address[2] = "11";
+                            break;
+                    default: $migas = "";
+                }
+                
+                if ($q > 0){
+                    echo "<a href=\"QA.php?q=$address[0]\">$migas[0]</a>";
+                }
+                if ($q > 10) {
+                    echo ">";
+                    echo "<a href=\"QA.php?q=$address[1]\">$migas[1]</a>";
+                }
+                if ($q > 100) {
+                    echo ">";
+                    echo "<a href=\"QA.php?q=$address[2]\">$migas[2]</a>";
+                }
+
+                //Cerrar div de migas
+                echo "</div>";
+
+                //Caja de las preguntas
+
+                echo "<div class=\"box\">
+                        <div class=\"question\">";
+
                 // Strings para los echos de los elementos HTML
 
                 // Pregunta de entrada + zona
-                $pregunta_entrada =  "¿Sobre que quieres que te ayudemos?
+                $pregunta_entrada =  "¿Sobre qué quieres que te ayudemos?
                 <div class=\"flex-answer-buttons\"> 
                 <a class=\"answers-button\" href=\"QA.php?q=1\">Tratamiento de piel</a> 
                 <a class=\"answers-button\" href=\"QA.php?q=2\">Tratamiento facial</a> 
@@ -48,12 +108,13 @@
                 <a class=\"answers-button\" href=\"QA.php?q=34\">Sensible</a> </div>";
 
                 // Tipos de piel
+                // ID 11
                 $necesidad_piel_piel_sensible = "Dinos, ¿qué necesitas?
                 <div class=\"flex-answer-buttons\">
-                <a class=\"answers-button\" href=\"QA.php?q=111\">Quiero verme más joven </a>
-                <a class=\"answers-button\" href=\"QA.php?q=112\">Cuidar y mimar mis manos</a> 
-                <a class=\"answers-button\" href=\"QA.php?q=113\">Reparar y reafirmar</a>
-                <a class=\"answers-button\" href=\"QA.php?q=114\">Cuidar mis manos, nutrir i reafirmar</a> </div>";
+                <a class=\"answers-button\" href=\"results.php?q=111\">Quiero verme más joven </a>
+                <a class=\"answers-button\" href=\"results.php?q=112\">Cuidar y mimar mis manos</a> 
+                <a class=\"answers-button\" href=\"results.php?q=113\">Reparar y reafirmar</a>
+                <a class=\"answers-button\" href=\"results.php?q=114\">Cuidar mis manos, nutrir i reafirmar</a> </div>";
 
                 // Piel sensible rejuvenecer
                 $necesidad_piel_piel_sensible_precio = "¿Cúal es tu presupuesto?
@@ -62,15 +123,19 @@
                 <a class=\"answers-button\" href=\"results.html\">Acabemos</a>
                 </div>";
  
-         
+                //Printar les preguntes
                 switch ($q) {
                     case 0: echo $pregunta_entrada; break;
                     case 1: echo $tipos_piel_2_piel; break;
                     case 11: echo $necesidad_piel_piel_sensible; break;
-                    case 111: echo $necesidad_piel_piel_sensible_precio; break;
+                    //case 111: echo $necesidad_piel_piel_sensible_precio; break;
                     case 2: echo $tipos_pelo; break;
                     default: echo "Ha habido un problema";
                 }
+
+                // Cerrar caja de las preguntas
+                echo "</div>
+                </div>";
 
                 $page = "QA";
                 $q = $_GET['q'];
@@ -105,12 +170,11 @@
                 echo "<a href=\"/{$page}.php{$q}\"><img src = \"resources/back-icon.png\"
                 alt=\"Index\"> </a>";
 
+                
+
             ?>
 
-            </div>
             
-            
-        </div>
         <?php
             
             

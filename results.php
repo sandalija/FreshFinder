@@ -9,11 +9,70 @@
     </head>
  
     <body>
-        <a href=index.php><img src = "resources/FreshFinder_logo.png"
+        <a href=index.php><img src = "resources/FreshFinder_logo_white.png"
                 alt="Inicio"> </a>
+        <div class="flex-help-buttons">
+            <a class="HelpButton" href="https://www.freshlycosmetics.com/es/contacta">Ayuda</a>
+            <a class="HelpButton" href="https://www.freshlycosmetics.com/es/productos/">Ver todo el catálogo</a>
+        </div> 
         <div class="products-list">
             
             <?php
+
+            // ID de la pregunta     
+            $q = $_GET['q'];
+
+
+            // migas de pan
+
+                $migas = array(0 => "", 1 => "", 2 => "");
+                $address = array(0 => "0", 1 => "", 2 => "", 3 => "");
+
+                //$lista = array ($agua_micelar_green, $blue_radiance_enzymatic_serum);
+
+                
+                switch($q) {
+                    case 1: $migas[0] = "Tratamiento de piel"; break;
+                    case 2: $migas[0] = "Tratamiento facial"; break;
+                    case 3: $migas[0] = "Tratamiento cabello"; break;
+                    case 4: $migas[0] = "Para niños"; break;
+                    case 11: $migas[0] = "Tratamiento de piel";
+                            $migas[1] = "Grasa"; 
+                            $address[1] = "1";
+                            break;
+                    case 12: $migas[0] = "Tratamiento de piel";
+                            $migas[1] = "Seca"; 
+                            $address[1] = "1";
+                          break;
+                    case 13: $migas[0] = "Tratamiento de piel";
+                            $migas[1] = "Mixta"; 
+                            $address[1] = "1";
+                            break;
+                    case 14: $migas[0] = "Tratamiento de piel";
+                            $migas[1] = "Sensible"; 
+                            $address[1] = "1";
+                             break;
+                    case 111: $migas[0] = "Tratamiento de piel";
+                            $migas[1] = "Grasa"; 
+                            $address[1] = "1";
+                            $migas[2] = "Rejuvenecer"; 
+                            $address[2] = "11";
+                            break;
+                    default: $migas = "";
+                }
+                
+                if ($q > 0){
+                    echo "<a href=\"QA.php?q=$address[0]\">$migas[0]</a>";
+                }
+                if ($q > 10) {
+                    echo " > ";
+                    echo "<a href=\"QA.php?q=$address[1]\">$migas[1]</a>";
+                }
+                if ($q > 100) {
+                    echo " > ";
+                    echo "<a href=\"QA.php?q=$address[2]\">$migas[2]</a>";
+                    //echo "<a href=\"QA.php?q=$address[1]\">$migas[1]</a>";
+                }
 
             // Definición del struct
             class Product {
@@ -73,7 +132,6 @@
             $lista = array ($agua_micelar_green, $blue_radiance_enzymatic_serum);
     
 
-            $q = 111;
             $p = 100000000;
 
             $prior = 0;
@@ -83,14 +141,17 @@
                         if ($prod->funcion == $q) {
                             if ($prod->price <= $p) {
                                 echo "<div class=\"product-view\">
-                                    <img src={$prod->imagen} />
+                                        <img src={$prod->imagen} />
                                     <div class=\"description-label\">
                                         <h3>{$prod->name}</h3>";
                                 
-                                echo "       <p>{$prod->descr_sort}</p>";
+                                echo "       <p>{$prod->descr_sort}</p>
+                                            <p> Esto se usa una vez a la semanda durnate tres meses.
+                                            Aplicar con un masaje suave al pelo y dejar secar 2 horas</p>";
                                 echo " <div class=\"store-buttons\">
-                                            <a href={$prod->enlace_freshly} class=\"view-button\">Comprar</a> 
-                                            <button class=\"view-button\">Compartir</button> 
+                                            <p class=\"price\">{$prod->price} €</p>
+                                            <a href={$prod->enlace_freshly} class=\"view-button\">COMPRAR</a> 
+                                            <a class=\"view-button\">COMPARTIR</a> 
                                         </div>
                                     </div>
                                 </div>";

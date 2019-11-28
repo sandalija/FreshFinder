@@ -12,6 +12,22 @@ body {
   background-color: white;
 }
 
+
+.hola{
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  background-color: darkorange;
+  width: 100%;
+  
+}
+
+.hola h2 {
+  color: azure;
+}
+
+
+
 h3 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 20px;
@@ -37,7 +53,7 @@ h2 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  background-color: black;
+  margin: 8px;
   margin-left: 0ch;
   margin-right: 0ch;
   border: 0ch;
@@ -49,27 +65,15 @@ h2 {
 
 .flex-answer-buttons{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  background-color: none;
-  margin-left: 0ch;
-  margin-right: 0ch;
-  border: 0ch;
-  border-block-color: black;
-  justify-content: center;
-  height: 125px;
-  justify-content: space-around;
+  flex-direction: column;
 }
 
 .QAbutton {
   background-color: greenyellow;
-  font-size: 30px;
+  font-size: 24px;
   font-family: Verdana;
   color: black;
-  display: inline-block;
-  font-weight: 400;
-  line-height: 1.25;
+  text-decoration: none; /*No subrayar*/
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -77,6 +81,11 @@ h2 {
   border: 2px solid green;
   padding: .5rem 1rem;
   border-radius: 0;
+  width: 250px;
+  height: 80px;
+  margin: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: space-around;
 }
 
 .box{
@@ -84,6 +93,7 @@ h2 {
   background-color: rgb(130, 230, 155);
   box-shadow: 4px;
   opacity: .8;
+  margin-left: 10%;
 }
 
 .question{
@@ -97,7 +107,6 @@ h2 {
   font-family: Verdana;
   color: black;
   display: inline-block;
-  font-weight: 400;
   line-height: 1.25;
   text-align: center;
   white-space: nowrap;
@@ -106,15 +115,15 @@ h2 {
   border: 4px solid green;
   padding: .5rem 1rem;
   border-radius: 0;
-  margin: 6px;
+  margin: 0px;
   flex: 1 0 44%; /* explanation below */
   margin: 5px;
   height: 50px;
 }
 
 .HelpButton{
-  background-color: rgb(114, 197, 223);
-  font-size: 20px;
+  
+  font-size: 17px;
   font-family: Verdana;
   color: black;
   display: inline-block;
@@ -127,15 +136,23 @@ h2 {
   border: 2px solid rgb(29, 130, 177);
   padding: .5rem 1rem;
   border-radius: 0;
+  text-decoration: none; /*No subrayar*/
+  margin: 2px;
+
+
 }
 
 .flex-help-buttons{
   padding: 25px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
   background-color: rgb(255, 255, 255);
+  /*Poner los botones de ayuda arriba derecha*/
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 
 .for-back-button{
@@ -157,15 +174,24 @@ h2 {
 }
 
 .product-view{
-  margin: 2px;
+  margin: 0px;
   background-color: rgb(182, 247, 129);
 }
 
-.description-label{
+.image-view {
   float: right;
+}
+
+.description-label{
+  float: left;
   display: flex;
   flex-direction: column;
   width: 60%;
+}
+
+.description-label h3 {
+  text-emphasis: none;
+  margin: 2px;
 }
 
 .store-buttons{
@@ -178,15 +204,38 @@ h2 {
 }
 
 .view-button{
-  padding: 16px;
+  padding: 6px;
   margin: 8px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  border: 2px solid green;
-  background-color: greenyellow;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  background-color: darkorange;
+  font-family: monospace;
+  text-decoration: none;
+  font-size: 20px;
+  color: whitesmoke;
+  margin-left: 5%;
+  height: 26px;
+  
 
 }
+
+.migas{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-decoration: none; /*No subrayar*/
+  color: darkgrey;
+  
+}
+
+.price {
+  font-size: 25px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+
+
 
