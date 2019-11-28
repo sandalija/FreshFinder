@@ -55,6 +55,24 @@
                             $migas[2] = "Rejuvenecer"; 
                             $address[2] = "11";
                             break;
+                    case 112: $migas[0] = "Tratamiento de piel";
+                        $migas[1] = "Grasa"; 
+                        $address[1] = "1";
+                        $migas[2] = "Nutrir, tonificar y reafirmar"; 
+                        $address[2] = "11";
+                        break;
+                    case 113: $migas[0] = "Tratamiento de piel";
+                        $migas[1] = "Grasa"; 
+                        $address[1] = "1";
+                        $migas[2] = "Higiene personal"; 
+                        $address[2] = "11";
+                        break;
+                    case 114: $migas[0] = "Tratamiento de piel";
+                        $migas[1] = "Grasa"; 
+                        $address[1] = "1";
+                        $migas[2] = "Cuidar las manos"; 
+                        $address[2] = "11";
+                        break;
                     default: $migas = "";
                 }
                 

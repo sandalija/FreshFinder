@@ -30,7 +30,6 @@
 
                 //$lista = array ($agua_micelar_green, $blue_radiance_enzymatic_serum);
 
-                
                 switch($q) {
                     case 1: $migas[0] = "Tratamiento de piel"; break;
                     case 2: $migas[0] = "Tratamiento facial"; break;
@@ -58,6 +57,24 @@
                             $migas[2] = "Rejuvenecer"; 
                             $address[2] = "11";
                             break;
+                    case 112: $migas[0] = "Tratamiento de piel";
+                        $migas[1] = "Grasa"; 
+                        $address[1] = "1";
+                        $migas[2] = "Nutrir, tonificar y reafirmar"; 
+                        $address[2] = "11";
+                        break;
+                    case 113: $migas[0] = "Tratamiento de piel";
+                        $migas[1] = "Grasa"; 
+                        $address[1] = "1";
+                        $migas[2] = "Higiene personal"; 
+                        $address[2] = "11";
+                        break;
+                    case 114: $migas[0] = "Tratamiento de piel";
+                        $migas[1] = "Grasa"; 
+                        $address[1] = "1";
+                        $migas[2] = "Cuidar las manos"; 
+                        $address[2] = "11";
+                        break;
                     default: $migas = "";
                 }
                 
@@ -111,10 +128,10 @@
             ésta será tu perdición, fresco y revitalizante a manzana verde.";
             $agua_micelar_green->price = 28.0;
             $agua_micelar_green->guia_uso = "Pontelo en la cara";
-            $agua_micelar_green->funcion = 111;
+            $agua_micelar_green->funcion = array (1 => 113);
             $agua_micelar_green->stars = 4;
             $agua_micelar_green->imagen = "resources/agua-micelar-natural-detox.jpg";
-            $agua_micelar_green->prioridad = 4;
+            $agua_micelar_green->prioridad = array (1 => 4);
             $agua_micelar_green->enlace_freshly = "https://www.freshlycosmetics.com/es/productos/agua-micelar-natural-detox";
         
             $blue_radiance_enzymatic_serum = new Product();
@@ -123,39 +140,78 @@
             este sérum facial exfoliante incorpora la máxima concentración de 12 tecnologías naturales ";
             $blue_radiance_enzymatic_serum->price = 35.0;
             $blue_radiance_enzymatic_serum->guia_uso = "nada";
-            $blue_radiance_enzymatic_serum->funcion = 111;
+            $blue_radiance_enzymatic_serum->funcion = array (1 => "111");
             $blue_radiance_enzymatic_serum->stars = 0;
             $blue_radiance_enzymatic_serum->imagen = "/resources/serum-exfoliante-enzimatico-natural.jpg";
-            $blue_radiance_enzymatic_serum->prioritat = 0;
+            $blue_radiance_enzymatic_serum->prioritat = array (1 => "1");
             $blue_radiance_enzymatic_serum->enlace_freshly = "https://www.freshlycosmetics.com/es/productos/serum-exfoliante-enzimatico-natural";
+            
+            $pro_repair_manos = new Product();
+            $pro_repair_manos->name = "Tratamiento Pro-Repair de Manos y U�as";
+            $pro_repair_manos->descr_sort = "Esta crema de manos mejora la hidrataci�n, 
+                   firmeza, elasticidad, luminosidad y suavidad de las manos y fortalece 
+                   la queratinizaci�n de las u�as.";
+             $pro_repair_manos->description = "Esta crema de manos mejora la hidrataci�n, firmeza, elasticidad, luminosidad y 
+                   suavidad de las manos y fortalece la queratinizaci�n de las u�as. Su tecnolog�a natural de hidrataci�n combina 
+                    un potente complejo de plantas xer�fitas y �cido hialur�nico vegano que mejoran la retenci�n de agua en la piel, 
+                    hidratando y reparando las manos secas y agrietadas. Adem�s, incorpora un concentrado de extracto de arroz que 
+                    incrementa la formaci�n de queratina y promueve el crecimiento de las u�as. Su formulaci�n aporta una elevada 
+                    hidrataci�n con aceites vegetales nutritivos como la manteca de karit�, la manteca de algod�n y el aceite de aguacate.
+                    �Su perfume a melocot�n y manzana har� que la quieras llevar contigo a todos lados!";
+             $pro_repair_manos->price = 14.00;
+            $pro_repair_manos->guia_uso = "Pontelo en las manos.";
+            $pro_repair_manos->funcion = array (1 => 114);
+            $pro_repair_manos->stars = 4;
+            $pro_repair_manos->imagen = "resources/tratamiento-crema-manos-natural.jpg";
+            $pro_repair_manos->prioridad = array (1 => 0);
+            $pro_repair_manos->enlace_freshly = "https://www.freshlycosmetics.com/es/productos/tratamiento-crema-manos-natural";
+            
+              $gel_ducha_detox = new Product();
+            $gel_ducha_detox->name = "Gel De Ducha Nutritivo Detox";
+            $gel_ducha_detox->descr_sort = "El gel de ducha natural que limpiar� tu piel de forma suave respetando la barrera d�rmica.";
+             $gel_ducha_detox->description = "El gel de ducha natural que limpiar� tu piel de forma suave respetando la barrera d�rmica. El Gel de Ducha Nutritivo contiene s�lo tensioactivos naturales suaves derivados del coco que generan una espuma cremosa . Esta f�rmula saludable restablecer� las funciones de la piel mediante la acci�n nutritiva e hidratante del aceite de almendras y el aceite de aguacate. Adem�s, incorpora una concentraci�n excepcional de aloe vera y avena que act�an reduciendo las irritaciones y calmando la piel. �Su perfume c�trico energizante ser� un imprescindible en cada ducha!";
+             $gel_ducha_detox->price = 12.00;
+           $gel_ducha_detox->guia_uso = "Pontelo en el cuerpo.";
+           $gel_ducha_detox->funcion = array (1 => 113);
+            $gel_ducha_detox->stars = 4;
+           $gel_ducha_detox->imagen = "resources/gel-ducha-natural-detox.jpg";
+            $gel_ducha_detox->prioridad = array (1 => 0);
+            $gel_ducha_detox->enlace_freshly = "https://www.freshlycosmetics.com/es/productos/gel-ducha-natural-detox";
 
-            $lista = array ($agua_micelar_green, $blue_radiance_enzymatic_serum);
+            $body_flame_firming = new Product();
+           $body_flame_firming->name = "Body Flame Firming Cream";
+            $body_flame_firming->descr_sort = "Reafirma, tonifica e hidrata tu piel con la Body Flame Firming Cream.";
+            $body_flame_firming->description = "Reafirma, tonifica e hidrata tu piel con la Body Flame Firming Cream. Esta innovadora crema corporal reafirmante de r�pida absorci�n, combina el potente activo dragon's eye y un concentrado de cafe�na natural, ingredientes naturales clave para lograr un notable efecto reductor en la piel. Incluye una elevada concentraci�n de los activos naturales m�s potentes para estimular la combusti�n de grasa y aumentar la tersura de la piel, reafirmando los tejidos. Su innovadora f�rmula incorpora un complejo de 7 plantas de alto poder hidratante y anti celul�tico, como es la hiedra, el naranjo y la centella asi�tica, que junto a los extractos de jengibre, pepino y alga fucus estimulan la eliminaci�n de toxinas. Sumando a esta crema corporal reafirmante un importante poder antioxidante y detox. ";
+            $body_flame_firming->price = 26.00;
+           $body_flame_firming->guia_uso = "Pontelo en el cuerpo.";
+           $body_flame_firming->funcion = array (1 => "111", 2=> 112);
+            $body_flame_firming->stars = 4;
+           $body_flame_firming->imagen = "resources/crema-reafirmante-natural-detox.jpg";
+            $body_flame_firming->prioridad = array (1 => "0", 2=> 0);
+            $body_flame_firming->enlace_freshly = "https://www.freshlycosmetics.com/es/productos/crema-reafirmante-natural-detox";
+            
+           
+            $lista = array ($agua_micelar_green, $blue_radiance_enzymatic_serum, $pro_repair_manos,$gel_ducha_detox,$body_flame_firming);
     
-
-            $p = 100000000;
 
             $prior = 0;
             while ($prior < 5) {
                 foreach ($lista as $prod){
-                    if ($prod->prioridad == $prior) {
-                        if ($prod->funcion == $q) {
-                            if ($prod->price <= $p) {
-                                echo "<div class=\"product-view\">
-                                        <img src={$prod->imagen} />
-                                    <div class=\"description-label\">
-                                        <h3>{$prod->name}</h3>";
-                                
-                                echo "       <p>{$prod->descr_sort}</p>
-                                            <p> Esto se usa una vez a la semanda durnate tres meses.
-                                            Aplicar con un masaje suave al pelo y dejar secar 2 horas</p>";
-                                echo " <div class=\"store-buttons\">
-                                            <p class=\"price\">{$prod->price} €</p>
-                                            <a href={$prod->enlace_freshly} class=\"view-button\">COMPRAR</a> 
-                                            <a class=\"view-button\">COMPARTIR</a> 
-                                        </div>
+                    if (in_array($q, $prod->funcion)) {
+                        if ($prod->prioridad[1] == $prior) {
+                            echo "<div class=\"product-view\">
+                                    <img src={$prod->imagen} />
+                                <div class=\"description-label\">
+                                    <h3>{$prod->name}</h3>";
+                            echo "       <p>{$prod->descr_sort}</p>
+                                        <p>MODO DE EMPLEO: {$prod->guia_uso}</p>";
+                            echo " <div class=\"store-buttons\">
+                                        <p class=\"price\">{$prod->price} €</p>
+                                        <a href={$prod->enlace_freshly} class=\"view-button\">COMPRAR</a> 
+                                        <a class=\"view-button\">COMPARTIR</a> 
                                     </div>
-                                </div>";
-                            }
+                                </div>
+                            </div>";
                         }
                     }
                 }
