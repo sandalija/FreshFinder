@@ -180,7 +180,7 @@
             $body_flame_firming->price = 26.00;
            $body_flame_firming->guia_uso = "Pontelo en el cuerpo.";
            $body_flame_firming->funcion = array (111,0,112,0);
-            $body_flame_firming->stars = 4;
+            $body_flame_firming->stars = 3;
            $body_flame_firming->imagen = "resources/crema-reafirmante-natural-detox.jpg";
             $body_flame_firming->enlace_freshly = "https://www.freshlycosmetics.com/es/productos/crema-reafirmante-natural-detox";
             
@@ -198,24 +198,54 @@
                                     <img src={$prod->imagen} />
                                 <div class=\"description-label\">
                                     <h3>{$prod->name}</h3>";
+                            
                             echo "       <p>{$prod->descr_sort}</p>
                                         <p>MODO DE EMPLEO: {$prod->guia_uso}</p>";
-                            echo " <div class=\"store-buttons\">
-                                        <p class=\"price\">{$prod->price} €</p>
+                                        $stars_counter = 0;
+                                while($stars_counter < $prod->stars){
+                                    echo "<img src=\"resources/star-icon.png\">";
+                                    $stars_counter = $stars_counter + 1;
+                                }
+                            echo " <div class=\"store-buttons\">";
+                            
+
+                            echo "<p class=\"price\">{$prod->price} €</p>
                                         <a href={$prod->enlace_freshly} class=\"view-button\">COMPRAR</a> 
                                         <a class=\"view-button\">COMPARTIR</a> 
                                     </div>
-                                </div>
-                            </div>";
+                                </div>";
+                            
+                           echo "</div>";
+
+                            
                         }
                     }
                 }
                 $prior = $prior + 1;
             }
 
+            $page = "QA";
+            $q = $_GET['q'];
+
+            if ($q > 100) {
+                $q = $q - ( $q % 10);
+                $q = $q / 10;
+                $q = "?q=".$q;
+            } elseif ($q > 10) {
+                $q = $q - ( $q % 10);
+                $q = $q / 10;
+                $q = "?q=".$q;
+            } else if ($q <= 4 && $q >= 1) {
+                $q = 0;
+                $q = "?q=".$q;
+            } else if ($q == 0) {
+                $q = "";
+                $page = "index";
+            }
 
 
-            echo "<a href=\"/QA.php?q={$q}\"><img src = \"resources/back-icon.png\"
+
+            echo "<a href=\"/{$page}.php{$q}\"><img src = \"resources/back-icon.png\"
                 alt=\"Index\"> </a>";
 
             
