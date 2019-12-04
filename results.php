@@ -101,7 +101,6 @@
                 public $funcion;
                 public $stars;
                 public $imagen;
-                public $prioridad;
                 public $enlace_freshly;
             }
 
@@ -128,10 +127,9 @@
             ésta será tu perdición, fresco y revitalizante a manzana verde.";
             $agua_micelar_green->price = 28.0;
             $agua_micelar_green->guia_uso = "Pontelo en la cara";
-            $agua_micelar_green->funcion = array (1 => 113);
+            $agua_micelar_green->funcion = array (113,4);
             $agua_micelar_green->stars = 4;
             $agua_micelar_green->imagen = "resources/agua-micelar-natural-detox.jpg";
-            $agua_micelar_green->prioridad = array (1 => 4);
             $agua_micelar_green->enlace_freshly = "https://www.freshlycosmetics.com/es/productos/agua-micelar-natural-detox";
         
             $blue_radiance_enzymatic_serum = new Product();
@@ -140,10 +138,9 @@
             este sérum facial exfoliante incorpora la máxima concentración de 12 tecnologías naturales ";
             $blue_radiance_enzymatic_serum->price = 35.0;
             $blue_radiance_enzymatic_serum->guia_uso = "nada";
-            $blue_radiance_enzymatic_serum->funcion = array (1 => "111");
+            $blue_radiance_enzymatic_serum->funcion = array (111,1);
             $blue_radiance_enzymatic_serum->stars = 0;
             $blue_radiance_enzymatic_serum->imagen = "/resources/serum-exfoliante-enzimatico-natural.jpg";
-            $blue_radiance_enzymatic_serum->prioritat = array (1 => "1");
             $blue_radiance_enzymatic_serum->enlace_freshly = "https://www.freshlycosmetics.com/es/productos/serum-exfoliante-enzimatico-natural";
             
             $pro_repair_manos = new Product();
@@ -160,10 +157,9 @@
                     �Su perfume a melocot�n y manzana har� que la quieras llevar contigo a todos lados!";
              $pro_repair_manos->price = 14.00;
             $pro_repair_manos->guia_uso = "Pontelo en las manos.";
-            $pro_repair_manos->funcion = array (1 => 114);
+            $pro_repair_manos->funcion = array (114,0);
             $pro_repair_manos->stars = 4;
             $pro_repair_manos->imagen = "resources/tratamiento-crema-manos-natural.jpg";
-            $pro_repair_manos->prioridad = array (1 => 0);
             $pro_repair_manos->enlace_freshly = "https://www.freshlycosmetics.com/es/productos/tratamiento-crema-manos-natural";
             
               $gel_ducha_detox = new Product();
@@ -172,10 +168,9 @@
              $gel_ducha_detox->description = "El gel de ducha natural que limpiar� tu piel de forma suave respetando la barrera d�rmica. El Gel de Ducha Nutritivo contiene s�lo tensioactivos naturales suaves derivados del coco que generan una espuma cremosa . Esta f�rmula saludable restablecer� las funciones de la piel mediante la acci�n nutritiva e hidratante del aceite de almendras y el aceite de aguacate. Adem�s, incorpora una concentraci�n excepcional de aloe vera y avena que act�an reduciendo las irritaciones y calmando la piel. �Su perfume c�trico energizante ser� un imprescindible en cada ducha!";
              $gel_ducha_detox->price = 12.00;
            $gel_ducha_detox->guia_uso = "Pontelo en el cuerpo.";
-           $gel_ducha_detox->funcion = array (1 => 113);
+           $gel_ducha_detox->funcion = array (113,0);
             $gel_ducha_detox->stars = 4;
            $gel_ducha_detox->imagen = "resources/gel-ducha-natural-detox.jpg";
-            $gel_ducha_detox->prioridad = array (1 => 0);
             $gel_ducha_detox->enlace_freshly = "https://www.freshlycosmetics.com/es/productos/gel-ducha-natural-detox";
 
             $body_flame_firming = new Product();
@@ -184,10 +179,9 @@
             $body_flame_firming->description = "Reafirma, tonifica e hidrata tu piel con la Body Flame Firming Cream. Esta innovadora crema corporal reafirmante de r�pida absorci�n, combina el potente activo dragon's eye y un concentrado de cafe�na natural, ingredientes naturales clave para lograr un notable efecto reductor en la piel. Incluye una elevada concentraci�n de los activos naturales m�s potentes para estimular la combusti�n de grasa y aumentar la tersura de la piel, reafirmando los tejidos. Su innovadora f�rmula incorpora un complejo de 7 plantas de alto poder hidratante y anti celul�tico, como es la hiedra, el naranjo y la centella asi�tica, que junto a los extractos de jengibre, pepino y alga fucus estimulan la eliminaci�n de toxinas. Sumando a esta crema corporal reafirmante un importante poder antioxidante y detox. ";
             $body_flame_firming->price = 26.00;
            $body_flame_firming->guia_uso = "Pontelo en el cuerpo.";
-           $body_flame_firming->funcion = array (1 => "111", 2=> 112);
+           $body_flame_firming->funcion = array (111,0,112,0);
             $body_flame_firming->stars = 4;
            $body_flame_firming->imagen = "resources/crema-reafirmante-natural-detox.jpg";
-            $body_flame_firming->prioridad = array (1 => "0", 2=> 0);
             $body_flame_firming->enlace_freshly = "https://www.freshlycosmetics.com/es/productos/crema-reafirmante-natural-detox";
             
            
@@ -198,7 +192,8 @@
             while ($prior < 5) {
                 foreach ($lista as $prod){
                     if (in_array($q, $prod->funcion)) {
-                        if ($prod->prioridad[1] == $prior) {
+                        $pos = array_search($q, $prod->funcion)+1;
+                        if ($prod->funcion[$pos] == $prior) {
                             echo "<div class=\"product-view\">
                                     <img src={$prod->imagen} />
                                 <div class=\"description-label\">
