@@ -211,19 +211,20 @@
 
                             echo "<p class=\"price\">{$prod->price} €</p>
                                         <a href={$prod->enlace_freshly} class=\"view-button\">COMPRAR</a> 
-                                        <a class=\"view-button\">COMPARTIR</a> 
+                                        <button class=\"share-button\" onclick=\"myFunction()\">COMPARTIR</button> 
                                     </div>
                                 </div>";
                             
                            echo "</div>";
 
-                            
+                    
                         }
                     }
                 }
                 $prior = $prior + 1;
             }
 
+            
             $page = "QA";
             $q = $_GET['q'];
 
@@ -250,6 +251,13 @@
 
             
             ?>
+
+            <script>
+                function myFunction() {
+                alert("Compartir aún no funciona. Disculpa las molestias 😅");
+            }
+            </script>
+
         </div>
     </body>
 </html>

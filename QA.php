@@ -148,7 +148,7 @@
                     case 11: echo $necesidad_piel_piel_sensible; break;
                     //case 111: echo $necesidad_piel_piel_sensible_precio; break;
                     case 2: echo $tipos_pelo; break;
-                    default: echo "Ha habido un problema";
+                    default: echo "Estamos trabajando en ofrecerte más. Disculpa las molestias";
                 }
 
                 // Cerrar caja de las preguntas

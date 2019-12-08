@@ -222,6 +222,26 @@ h2 {
 
 }
 
+.share-button{
+  padding: 6px;
+  margin: 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  background-color: darkorange;
+  font-family: monospace;
+  text-decoration: none;
+  font-size: 20px;
+  color: whitesmoke;
+  margin-left: 5%;
+  height: 36px;
+  
+
+}
+
 .migas{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-decoration: none; /*No subrayar*/
